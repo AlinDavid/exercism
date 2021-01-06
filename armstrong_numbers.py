@@ -1,3 +1,4 @@
 def is_armstrong_number(number):
-    return number == sum(int(i) ** len(list(str(number))) for i in list(str(number)))
-
+    number_list = list(str(number))
+    number_length = len(list(str(number)))
+    return number == sum([int(i) ** number_length for i in number_list])
