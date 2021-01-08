@@ -1,6 +1,5 @@
-
-
 def given_name(name):
+    
     if name != "":
         return "One for {}, one for me.".format(name)
     else:
