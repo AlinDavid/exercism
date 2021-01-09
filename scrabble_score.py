@@ -14,6 +14,3 @@ def score(word):
     for letter in word.upper():
         score_total = score_total + (points[letter])
     return score_total
-
-
-print(score("cabbage"))
