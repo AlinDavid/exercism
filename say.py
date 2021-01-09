@@ -8,33 +8,41 @@ NUMBERS = {0: "zero", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "
 
 
 def say(number):
+           
     remain = 0
     seperator = " "
+           
     if number < 0:
         raise ValueError("Number must be positive")
+
     elif number < 21:
         result = NUMBERS[number]
+
     elif number < 100:
         result = NUMBERS[int(number/10)*10]
         remain = number % 10
         seperator = "-"
+
     elif number < 1000:
         result = NUMBERS[int(number/100)] + seperator + NUMBERS[100]
         remain = number % 100
+           
     elif number < 1000000:
         result = say(int(number/1000)) + seperator + NUMBERS[1000]
         remain = number % 1000
+           
     elif number < 1000000000:
         result = say(int(number/1000000)) + seperator + NUMBERS[1000000]
         remain = number % 1000000
+           
     elif number < 1000000000000:
         result = say(int(number/1000000000)) + seperator + NUMBERS[1000000000]
         remain = number % 1000000000
+           
     else:
         raise ValueError("Value must not be greater than 999999999999")
+
     if remain > 0:
         result += seperator + say(remain)
+
     return result
-
-
-print(say(991))
