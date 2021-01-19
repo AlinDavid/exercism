@@ -4,3 +4,5 @@ def is_pangram(sentence):
     for char in alphabet:
         if char not in sentence.lower():
             return False
+
+        
